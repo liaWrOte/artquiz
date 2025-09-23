@@ -1,0 +1,66 @@
+@use 'reset';
+@use 'vars';
+@import url('https://fonts.googleapis.com/css?family=Inter+Tight');
+
+body {
+  background-color: vars.$darkbrown;
+  color: vars.$brown;
+  font-family: 'Inter Tight', sans-serif;
+  font-weight: 600;
+  width: 100vw;
+  height: 100vh;
+}
+
+p {
+  margin-bottom: (vars.$smallGutter);
+  letter-spacing: 0.02rem;
+}
+
+.big_text {
+  font-size: 1.5rem;
+}
+
+@mixin block {
+  color: vars.$beige;
+  border-radius: 5px;
+  padding: 1rem 0.7rem;
+  text-align: center;
+  margin-bottom: (vars.$smallGutter);
+  transition: padding 0.2s ease-in-out;
+}
+
+.green_block {
+  @include block;
+  background-color: vars.$darkgreen;
+  &:hover {
+    background-color: darken($color: vars.$darkgreen, $amount: 5)
+  }
+}
+
+.orange_block {
+  @include block;
+  background-color: vars.$orange;
+  &:hover {
+    background-color: darken($color: vars.$orange, $amount: 5)
+  }
+}
+
+.flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  > * {
+    width: 33.33%;
+    &:nth-child(2) {
+      text-align: center;
+    }
+    &:nth-child(3) {
+      text-align: right;
+    }
+  }
+}
+
+.main_font_display {
+  font-size: 1.2rem;
+  font-weight: 600;
+}

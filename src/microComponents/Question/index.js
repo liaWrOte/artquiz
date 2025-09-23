@@ -1,0 +1,24 @@
+import React from 'react';
+import { useContext } from "react";
+import { QuizContext } from '../../reducers';
+
+import './index.scss';
+
+const Question = () => {
+    const [quizState] = useContext(QuizContext);
+    if (quizState.questions.length > 0) {
+        const currentQuestion = quizState.questions[quizState.currentQuestionIndex];
+        const imageSrc = currentQuestion.imageSrc;
+        if (quizState.questions.length > 0) {
+            return (
+                <>
+                    <img className="question_image" src={imageSrc} alt=""/>
+                    <p>{ currentQuestion.question }</p>
+                </>
+    
+            )
+        }
+    }
+}
+
+export default Question;

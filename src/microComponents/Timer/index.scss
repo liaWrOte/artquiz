@@ -1,0 +1,8 @@
+@use '../../styles/vars';
+
+.timer, .timer_end {
+    display: inline-block;
+    width: 100%;
+    text-align: center;
+    margin: (vars.$bigGutter) 0;
+}

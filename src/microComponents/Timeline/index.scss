@@ -1,0 +1,22 @@
+@use '../../styles/vars';
+
+
+.timeline {
+    display: flex;
+    margin-top: (vars.$smallGutter);
+    span {
+        width: 100%;
+        height: 5px;
+        background-color: vars.$darkbrown;
+        &.active {
+            background-color: vars.$darkgreen;
+        }
+    }
+}
+
+.timeline_text {
+    display: inline-block;
+    width: 100%;
+    text-align: center;
+    margin-top: calc(vars.$smallGutter / 3);
+}
