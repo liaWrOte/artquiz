@@ -12,7 +12,7 @@ body {
 }
 
 p {
-  margin-bottom: (vars.$smallGutter);
+  margin-bottom: (vars.$small-gutter);
   letter-spacing: 0.02rem;
 }
 
@@ -25,7 +25,7 @@ p {
   border-radius: 5px;
   padding: 1rem 0.7rem;
   text-align: center;
-  margin-bottom: (vars.$smallGutter);
+  margin-bottom: (vars.$small-gutter);
   transition: padding 0.2s ease-in-out;
 }
 

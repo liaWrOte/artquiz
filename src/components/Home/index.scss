@@ -1,0 +1,25 @@
+@import '../../styles/vars';
+
+.quiz-pack {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: $gutter;
+    a {
+        width: 40%;
+        height: 120px;
+        overflow: hidden;
+        position: relative;
+        img {
+            width: 100%;
+            height: fit-content;
+        }
+        span {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate((-50%, -50%));
+            color: white;
+        };
+    }
+}

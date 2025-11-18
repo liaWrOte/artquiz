@@ -1,12 +1,14 @@
 import React from 'react';
 import { Route, Routes, BrowserRouter, useParams } from 'react-router-dom';
-import { QuizProvider } from '../../reducers';
 // == Import composants
 import Home from '../Home';
 import Quiz from '../Quiz';
 
 import '../../styles/index.scss';
 import './index.scss';
+
+// Data
+import quizData from '../../data/quiz.json';
 
 // function Users() {
 //     // 👇️ get ID from url
@@ -19,21 +21,23 @@ import './index.scss';
 
 // == Composant
 const App = () => (
-    <QuizProvider>
-        <div className='app'>
-            <BrowserRouter>
-                <Routes>
-                    <Route path="/" element={<Home />} />
-                        <Route 
-                            path=":/level1/:questionId" 
-                            render={({ match }) => (
-                                <Quiz id={match.params.questionId} />
-                            )} />
-                    <Route path="/level1" element={<Quiz />} />
-                </Routes>
-            </BrowserRouter>
-        </div>
-    </QuizProvider>
+    <div className='app'>
+        <BrowserRouter>
+            <Routes>
+                <Route path="/" element={<Home />} />
+
+                { Object.entries(quizData).map( ([theme, questions], index) => (
+
+                    <Route 
+                        path={`/quiz/${theme}`} 
+                        element={<Quiz theme={theme} questions={questions}/>}
+                    />
+
+                ))}
+
+            </Routes>
+        </BrowserRouter>
+    </div>
 );
 
 // == Export
