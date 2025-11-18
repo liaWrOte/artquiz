@@ -1,0 +1,7 @@
+@import '../../styles/vars';
+
+.answersResults {
+    display: flex;
+    flex-direction: column;
+    gap: $big-gutter;
+}

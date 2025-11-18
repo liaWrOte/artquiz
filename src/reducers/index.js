@@ -12,7 +12,7 @@ const initialState = {
 };
 
 const reducer = (state, action) => {
-    console.error("STATE ", state, action.payload);
+    console.error("STATE ", state, action.type);
     switch (action.type) {
         case "SELECT_THEME" : {
             return {
@@ -69,15 +69,34 @@ const reducer = (state, action) => {
         }
 
         case "DECREASE_TIMER": {
-            let timer;
+            let updatedTimer;
             if (action.payload >= 0) {
-                timer = action.payload;
+                updatedTimer = action.payload;
             } else {
-                timer = 0;
+                updatedTimer = 0;
             }
             return {
                 ...state,
-                timer
+                timer: updatedTimer
+            }
+        }
+
+        case "RESET_QUESTIONS": {
+            const updatedQuestions = state.questions.map(q => {
+                const { rightAnswered, ...rest } = q; // destructuration pour retirer rightAnswered
+                return rest; // retourne un nouvel objet sans rightAnswered
+            });
+
+            const modifiedCorrectAnswersCount = 0;
+            const modifiedCurrentQuestionIndex = 0;
+            const modifiedCurrentAnswer = 0;
+
+            return {
+                ...state,
+                questions: updatedQuestions,
+                correctAnswersCount: modifiedCorrectAnswersCount,
+                currentQuestionIndex: modifiedCurrentQuestionIndex,
+                currentAnswer: modifiedCurrentAnswer
             }
         }
 
@@ -89,7 +108,15 @@ const reducer = (state, action) => {
 
 export const QuizContext = createContext();
 
-export const QuizProvider = ({ children }) => {
+// Provider sécurisé
+export const QuizProvider = ({ children = null }) => {
     const value = useReducer(reducer, initialState);
-    return <QuizContext.Provider value={value}>{children}</QuizContext.Provider>
-}
+
+    // On peut vérifier que children existe
+    if (!children) {
+        console.warn("QuizProvider has no children!");
+        return null;
+    }
+
+    return <QuizContext.Provider value={value}>{children}</QuizContext.Provider>;
+};

@@ -3,6 +3,7 @@ import { Route, Routes, BrowserRouter, useParams } from 'react-router-dom';
 // == Import composants
 import Home from '../Home';
 import Quiz from '../Quiz';
+import QuizResult from '../QuizResult';
 
 import '../../styles/index.scss';
 import './index.scss';
@@ -34,6 +35,8 @@ const App = () => (
                     />
 
                 ))}
+
+                <Route path="/result" element={<QuizResult />} />
 
             </Routes>
         </BrowserRouter>

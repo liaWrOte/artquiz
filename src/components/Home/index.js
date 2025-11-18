@@ -1,7 +1,6 @@
 import React, {useContext} from 'react';
 import Title from '../../microComponents/Title';
 import Subtitle from '../../microComponents/Subtitle';
-// import Starter from '../../microComponents/Starter';
 import Cutie from '../../microComponents/Cutie';
 import QuizVignette from '../../microComponents/QuizVignette';
 import { Link } from 'react-router-dom';
@@ -19,18 +18,19 @@ const Home = () => {
     <div className='Home'>
         <Title />
         <Subtitle />
-        {/* <Starter /> */}
         <div className="quiz-pack">
             { Object.entries(quizData).map( ([theme, questions], index) => (
-                    <Link to={"/quiz/" + theme}>
+                    <Link 
+                        to={"/quiz/" + theme}
+                        onClick={() => dispatch({
+                                type: "SELECT_THEME",
+                                payload: theme
+                            })}>
                         <QuizVignette 
                             answers={questions}
                             themeText={theme}
                             key={index}
-                            onClick={() => dispatch({
-                                type: "SELECT_THEME",
-                                payload: theme
-                            })}
+                            
                         />
                     </Link>
 

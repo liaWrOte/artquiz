@@ -8,7 +8,7 @@ const Question = () => {
     const [quizState] = useContext(QuizContext);
     if (quizState.questions.length > 0) {
         const currentQuestion = quizState.questions[quizState.currentQuestionIndex];
-        const imageSrc = currentQuestion.imageSrc;
+        const imageSrc = currentQuestion.image_link;
         if (quizState.questions.length > 0) {
             return (
                 <>
