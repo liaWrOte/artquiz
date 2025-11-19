@@ -2,7 +2,7 @@ import React from 'react';
 
 const TitleHeader = () => {
     return (
-        <h2 className="main_font_display">Level 1</h2>
+        <h2 className="main-font-display">Level 1</h2>
     )
 }
 

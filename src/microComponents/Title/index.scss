@@ -1,9 +1,9 @@
 @use '../../styles/vars';
 
-.title_home {
+.title-home {
     display: flex;
     justify-content: space-between;
-    .main_avatar {
+    .main-avatar {
         outline: 10px solid vars.$beige;
         border-radius: 50%;
         width: 50px;

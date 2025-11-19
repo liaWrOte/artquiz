@@ -13,7 +13,7 @@ const NextQuestion = () => {
         //     return (<span onClick={() => dispatch({type: 'NEXT_QUESTION'})}>Question suivante</span>)
         // }
         if (isCorrectAnswer || quizState.timer === 0) {
-            return (<span className="next_question" onClick={() => dispatch({type: 'NEXT_QUESTION'})}>Question suivante <span className="next_question_arrow">&#62;</span></span>)
+            return (<span className="next-question" onClick={() => dispatch({type: 'NEXT_QUESTION'})}>Question suivante <span className="next-question-arrow">&#62;</span></span>)
             // return (<span>Essaie encore</span>)
         }
     }

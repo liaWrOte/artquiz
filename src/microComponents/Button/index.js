@@ -15,7 +15,7 @@ const Button = ({link, text}) => {
                 type: "RESET_QUESTIONS",
                 payload: ''
             })}>
-            <div className="green_block start_quiz">{text}</div>
+            <div className="green-block start-quiz">{text}</div>
         </Link>
     )
 }

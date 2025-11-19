@@ -19,7 +19,7 @@ const Answer = ({answerText, onSelectAnswer, index, currentAnswer, correctAnswer
 
     return (
         <div 
-            className={`orange_block answer ${correctAnswerClass} ${wrongAnswerClass} ${disabledClass} ${badAnswerClass}`}
+            className={`orange-block answer ${correctAnswerClass} ${wrongAnswerClass} ${disabledClass} ${badAnswerClass}`}
             onClick={() => onSelectAnswer(answerText)}
         >
             { answerText }

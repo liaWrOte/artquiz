@@ -14,6 +14,9 @@ import Timeline from "../../microComponents/Timeline";
 // Data
 import quizData from '../../data/quiz.json';
 
+// Styles
+import './index.scss';
+
 const Quiz = (theme, questions) => {
     let [quizState, dispatch] = useContext(QuizContext);
     // console.error('THEME', theme);
@@ -36,14 +39,14 @@ const Quiz = (theme, questions) => {
         }
     })
     return (
-        <>
+        <div className="game-container">
             <Header />
             <Timeline />
             <Timer />
             <Question />
             <Answers />
             <NextQuestion />
-        </>
+        </div>
     )
 }
 

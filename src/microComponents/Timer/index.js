@@ -19,9 +19,9 @@ const Timer = () => {
     return (
         <>
             {quizState.timer > 0 &&  <div className='timer'>{ quizState.timer}s</div>}
-            {quizState.timer === 0 && isCorrectAnswer && <span className="timer_end">Bien joué !</span>
+            {quizState.timer === 0 && isCorrectAnswer && <span className="timer-end">Bien joué !</span>
             }
-            {quizState.timer === 0 && !isCorrectAnswer && <span className="timer_end">Zut, ça sera pour la prochaine !</span>
+            {quizState.timer === 0 && !isCorrectAnswer && <span className="timer-end">Zut, ça sera pour la prochaine !</span>
             }
         </>
     )

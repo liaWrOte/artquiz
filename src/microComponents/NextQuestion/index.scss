@@ -1,11 +1,11 @@
 @use '../../styles/vars';
 
-.next_question {
+.next-question {
     text-align: right;
     width: 100%;
     display: inline-block;
     margin-top: vars.$big-gutter;
-    &.next_question_arrow {
+    &.next-question-arrow {
         width: 100px;
         display: inline-block;
     }

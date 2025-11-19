@@ -4,8 +4,8 @@ import './index.scss';
 
 const Title = () => {
     return (
-        <div className="title_home">
-            <p className="big_text">&#128075; Hi ArtLover</p>
+        <div className="title-home">
+            <p className="big-text">&#128075; Hi ArtLover</p>
         </div>
         
     )

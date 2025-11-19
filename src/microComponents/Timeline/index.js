@@ -21,7 +21,7 @@ const Timeline = () => {
                     </span>
                 ))}
                 </div>
-                <span className="timeline_text">{ quizState.currentQuestionIndex + 1 }/{ quizState.questions.length }</span>
+                <span className="timeline-text">{ quizState.currentQuestionIndex + 1 }/{ quizState.questions.length }</span>
             </>
         )
     }

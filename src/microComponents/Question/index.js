@@ -12,7 +12,7 @@ const Question = () => {
         if (quizState.questions.length > 0) {
             return (
                 <>
-                    <img className="question_image" src={imageSrc} alt=""/>
+                    <img className="question-image" src={imageSrc} alt=""/>
                     <p>{ currentQuestion.question }</p>
                 </>
     
