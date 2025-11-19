@@ -9,7 +9,7 @@ const QuizVignette = ({answers, themeText}) => {
         <div 
             className='block'>
                 <img src={answers[0].image_link} alt="" />
-                <span>{themeText}</span>
+                <span class="quiz-vignette-label">{themeText}</span>
         </div>
     )
 }
