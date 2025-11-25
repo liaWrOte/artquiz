@@ -26,7 +26,8 @@ const Quiz = (theme, questions) => {
     useEffect(() => {
         const lastIndex = quizState.questions.length - 1;
         if(quizState.questions[lastIndex] && quizState.questions[lastIndex].rightAnswered !== undefined) {
-            navigate('/result');
+            dispatch({type: 'END_QUIZ', payload: true})
+            navigate('/');
         }
     }, [quizState.questions, navigate])
     // console.error('THEMELABEL', quizData[themeLabel]);

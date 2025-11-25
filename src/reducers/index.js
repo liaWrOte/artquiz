@@ -100,6 +100,15 @@ const reducer = (state, action) => {
             }
         }
 
+        case "END_QUIZ": {
+            console.log(action.payload);
+            const newShowResults = action.payload;
+            return {
+                ...state,
+                showResults: newShowResults
+            }
+        }
+
         default: {
             return state;
         }

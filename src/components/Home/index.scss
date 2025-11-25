@@ -35,6 +35,16 @@
     } 
 }
 
+.quiz-result {
+    margin-top: $small-gutter;
+    text-align: center;
+}
+
+.answersResults {
+    display: flex;
+    flex-direction: column;
+}
+
 .quiz-container {
     padding: 0 1.5rem 3rem 1.5rem;
     .quiz-label {

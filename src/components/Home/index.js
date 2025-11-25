@@ -28,34 +28,69 @@ const Home = () => {
             </div>
         </div>
 
+        { quizState.showResults && 
+            <>
+                <div class="quiz-result">QuizResult</div>
+                { quizState.correctAnswersCount > 6 &&
+                    <div class="quiz-result">Good job !</div>
+                }
+                { quizState.correctAnswersCount <= 6 &&
+                    <div class="quiz-result">Almost there, try again</div>
+                }
+                <div className="answersResults answers">
+                    { Object.entries(quizState.questions).map( ([theme, questions], index) => (
+                        <span className={`answer ${questions.rightAnswered ? 'green-block right-answer' : 'orange-block wrong-answer'}`}>
+                            {questions.correctAnswer}
+                        </span>
+                    )) }
+                </div>
 
-        <div className="logo-container">
-            <img src={paletteLogo} alt="" />
-            <span className="logo-text">ArtQuiz</span>
-            <p>Ready to play ?</p>
-        </div>
+                <div className="results-action-container">
+                    
+                    <Link to={'/'}
+                        onClick={() => {
+                                dispatch({type: "END_QUIZ", payload: false});
+                                dispatch({type: "RESET_QUESTIONS", payload: ''})
+                            }}
+                        className="green-block start-quiz">
+                            Play again !
+                    </Link>
+                </div>
+            </>
+        }
+        
+        { !quizState.showResults &&
+            <>
+                <div className="logo-container">
+                    <img src={paletteLogo} alt="" />
+                    <span className="logo-text">ArtQuiz</span>
+                    <p>Ready to play ?</p>
+                </div>
 
-        <div className="quiz-container">
-            <p class="quiz-label">Choose your theme</p>
-            <div className="quiz-container-links">
-                { Object.entries(quizData).map( ([theme, questions], index) => (
-                        <Link 
-                            to={"/quiz/" + theme}
-                            onClick={() => dispatch({
-                                    type: "SELECT_THEME",
-                                    payload: theme
-                                })}>
-                            <QuizVignette 
-                                answers={questions}
-                                themeText={theme}
-                                key={index}
-                                
-                            />
-                        </Link>
+                <div className="quiz-container">
+                    <p class="quiz-label">Choose your theme</p>
+                    <div className="quiz-container-links">
+                        { Object.entries(quizData).map( ([theme, questions], index) => (
+                                <Link 
+                                    to={"/quiz/" + theme}
+                                    action=''
+                                    onClick={() => dispatch({
+                                            type: "SELECT_THEME",
+                                            payload: theme
+                                        })}>
+                                    <QuizVignette 
+                                        answers={questions}
+                                        themeText={theme}
+                                        key={index}
+                                        
+                                    />
+                                </Link>
 
-                ))}
-            </div>
-        </div>
+                        ))}
+                    </div>
+                </div>
+            </>
+        }
 
         {/* <Cutie /> */}
     </div>
