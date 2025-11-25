@@ -1,6 +1,9 @@
 @import '../../styles/vars';
 @import url('https://fonts.googleapis.com/css?family=Chewy');
 
+.home {
+    position: relative;
+}
 .user-container {
     display: flex;
     justify-content: space-between;
@@ -40,9 +43,23 @@
     text-align: center;
 }
 
-.answersResults {
+.answers-results {
     display: flex;
     flex-direction: column;
+    padding: 3rem 1.5rem;
+    height: 450px;
+    overflow: hidden;
+}
+
+.results-action-container {
+    position: absolute;
+    bottom: $gutter;
+    left: 0;
+    right: 0;
+    text-align: center;
+    .start-quiz {
+        text-align: center;
+    }
 }
 
 .quiz-container {

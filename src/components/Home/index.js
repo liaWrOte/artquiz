@@ -16,7 +16,7 @@ const Home = () => {
     const [quizState, dispatch] = useContext(QuizContext);  
 
     return (
-    <div className='Home'>
+    <div className='home'>
         <div className="user-container">
             <Title />
             
@@ -30,14 +30,13 @@ const Home = () => {
 
         { quizState.showResults && 
             <>
-                <div class="quiz-result">QuizResult</div>
                 { quizState.correctAnswersCount > 6 &&
                     <div class="quiz-result">Good job !</div>
                 }
                 { quizState.correctAnswersCount <= 6 &&
                     <div class="quiz-result">Almost there, try again</div>
                 }
-                <div className="answersResults answers">
+                <div className="answers-results answers">
                     { Object.entries(quizState.questions).map( ([theme, questions], index) => (
                         <span className={`answer ${questions.rightAnswered ? 'green-block right-answer' : 'orange-block wrong-answer'}`}>
                             {questions.correctAnswer}
@@ -53,7 +52,7 @@ const Home = () => {
                                 dispatch({type: "RESET_QUESTIONS", payload: ''})
                             }}
                         className="green-block start-quiz">
-                            Play again !
+                            <span>Play again !</span>
                     </Link>
                 </div>
             </>
